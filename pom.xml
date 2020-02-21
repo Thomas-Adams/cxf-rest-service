@@ -35,7 +35,7 @@
 		<moxy.version>2.7.6</moxy.version>
 		<org.projectlombok.version>1.18.2</org.projectlombok.version>
 		<org.slf4j.version>1.7.26</org.slf4j.version>
-		<log4j.version>1.2.17</log4j.version>
+		<log4j.version>2.13.0</log4j.version>
 		<jackson.version>2.10.2</jackson.version>
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<joda-time.version>2.9.9</joda-time.version>
@@ -102,18 +102,28 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>${org.slf4j.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j-impl</artifactId>
 			<version>${log4j.version}</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>${log4j.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${log4j.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-rs-service-description</artifactId>
@@ -185,8 +195,8 @@
 							org.adams.karaf.service.xml*;version=${project.version},
 							org.adams.karaf.service.impl*;version=${project.version},
 							org.adams.karaf.service.dto*;version=${project.version},
-							
-							
+
+
 						</Export-Package>
 						<Import-Package>
 							org.springframework.web.context*;version=${spring.version},
@@ -194,7 +204,7 @@
 							org.apache.shiro.web.servlet*;version=${shiro.version},
 							com.fasterxml.jackson.jaxrs.json*;version=${jackson.version},
 							org.eclipse.persistence.jaxb*;version=${moxy.version},
-									
+
 							*
 						</Import-Package>
 						<Web-ContextPath>enargit</Web-ContextPath>
@@ -207,7 +217,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>	
+				<version>3.8.1</version>
 				<configuration>
 					<source>${maven.compiler.source}</source>
 					<target>${maven.compiler.target}</target>
