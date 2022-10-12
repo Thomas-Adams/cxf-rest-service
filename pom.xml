@@ -39,7 +39,7 @@
 		<jackson.version>2.10.2</jackson.version>
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<joda-time.version>2.9.9</joda-time.version>
-		<shiro.version>1.5.0</shiro.version>
+		<shiro.version>1.10.0</shiro.version>
 	</properties>
 
 	<dependencies>
